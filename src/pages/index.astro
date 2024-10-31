@@ -4,47 +4,126 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
-
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<head>
+  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<body class="bg-white text-gray-800">
+  <Header />
+  <main class="max-w-7xl mx-auto">
+    <!-- Hero Section -->
+    <section class="relative bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="py-16">
+          <div class="text-center">
+            <h1 class="text-5xl font-bold text-gray-900">
+              Welcome to <span class="text-teal-600">[Business Name]</span>
+            </h1>
+            <p class="mt-4 text-xl text-gray-600">
+              Proudly serving the <span class="font-semibold">[City/Town Name]</span> community with exceptional [services].
+            </p>
+            <div class="mt-8 flex justify-center space-x-4">
+              <a href="#services" class="px-6 py-3 bg-teal-700 text-white rounded-md shadow hover:bg-teal-900 transition duration-300">
+                Our Services
+              </a>
+              <a href="#contact" class="px-6 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition duration-300">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-50 py-16 scroll-m-[40px]">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900">About Us</h2>
+        <p class="mt-4 text-lg text-gray-600">
+          With over [X years] of experience, [Business Name] is dedicated to providing top-notch services to the [City/Town Name] community. We believe in quality, integrity, and building lasting relationships with our customers.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 scroll-m-[40px]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-gray-900">Our Services</h2>
+          <p class="mt-4 text-lg text-gray-600">
+            We offer a wide range of services tailored to meet the needs of our local community.
+          </p>
+        </div>
+        <div class="mt-12 grid gap-8 grid-cols-1 md:grid-cols-3">
+          <!-- Service 1 -->
+          <div class="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow duration-300">
+            <h3 class="text-xl font-semibold text-gray-900 text-center">Service 1</h3>
+            <p class="mt-4 text-gray-600 text-center">
+              Detailed description of service 1, highlighting its benefits and relevance to the local community.
+            </p>
+          </div>
+          <!-- Service 2 -->
+          <div class="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow duration-300">
+            <h3 class="text-xl font-semibold text-gray-900 text-center">Service 2</h3>
+            <p class="mt-4 text-gray-600 text-center">
+              Detailed description of service 2, emphasizing how it serves local needs.
+            </p>
+          </div>
+          <!-- Service 3 -->
+          <div class="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow duration-300">
+            <h3 class="text-xl font-semibold text-gray-900 text-center">Service 3</h3>
+            <p class="mt-4 text-gray-600 text-center">
+              Detailed description of service 3, and its impact on the local community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-gray-100 py-16 scroll-m-[40px]">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900">What Our Clients Say</h2>
+        <div class="mt-12 grid gap-8 grid-cols-1 md:grid-cols-2">
+          <!-- Testimonial 1 -->
+          <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
+            <p class="text-lg text-gray-600">
+              "The team at [Business Name] went above and beyond. Their service is unmatched in [City/Town Name]!"
+            </p>
+            <p class="mt-4 text-sm font-semibold text-gray-900">- Customer Name</p>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-300">
+            <p class="text-lg text-gray-600">
+              "Exceptional service with a personal touch. Highly recommend to anyone in the area."
+            </p>
+            <p class="mt-4 text-sm font-semibold text-gray-900">- Customer Name</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-teal-700 scroll-m-[40px]">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        <h2 class="text-3xl font-bold">Get in Touch</h2>
+        <p class="mt-4 text-lg">
+          Ready to experience the best in [services]? Contact us today!
+        </p>
+        <div class="mt-8">
+          <form class="grid grid-cols-1 gap-6 max-w-md mx-auto">
+            <input type="text" placeholder="Your Name" class="w-full p-3 rounded-md bg-white text-gray-900">
+            <input type="email" placeholder="Your Email" class="w-full p-3 rounded-md bg-white text-gray-900">
+            <textarea rows="4" placeholder="Your Message" class="w-full p-3 rounded-md bg-white text-gray-900"></textarea>
+            <button type="submit" class="w-full py-3 bg-white text-teal-700 font-semibold rounded-md hover:bg-gray-100 transition duration-300">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</body>
 </html>
