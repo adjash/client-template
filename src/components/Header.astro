@@ -61,11 +61,21 @@ import { SITE_TITLE } from '../consts';
   <script>
     const menuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    menuButton.addEventListener('click', () => {
-      const expanded = menuButton.getAttribute('aria-expanded') === 'true';
-      menuButton.setAttribute('aria-expanded', (!expanded).toString());
-      mobileMenu.classList.toggle('hidden');
-      mobileMenu.setAttribute('aria-hidden', expanded.toString());
-    });
+    const mobileMenuItems = mobileMenu?.querySelectorAll('a');
+    if (menuButton) {
+      menuButton.addEventListener('click', () => {
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', (!expanded).toString());
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.setAttribute('aria-hidden', expanded.toString());
+      });
+    }
+    if (mobileMenuItems) {
+      mobileMenuItems.forEach((item,idx) => {
+        item.addEventListener('click', (e) => {
+          menuButton?.click();
+        });
+      });
+    }
   </script>
 </header>
